@@ -9,12 +9,13 @@ TextStyle cardTitleStyle = GoogleFonts.aBeeZee(
 );
 
 TextStyle primaryTextStyle = GoogleFonts.aBeeZee(
-  fontSize: 18,
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
   color: black,
 );
 
 TextStyle secondaryTextStyle = GoogleFonts.aBeeZee(
-  fontSize: 16,
+  fontSize: 18,
   color: black,
 );
 

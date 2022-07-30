@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:hamon_project/utils/routers.dart';
+import 'package:provider/provider.dart';
+import '../../controllers/student_provider.dart';
 import 'widget/section_card.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    //Provider.of<StudentProvider>(context, listen: false).getStudents();
+  }
 
   @override
   Widget build(BuildContext context) {
