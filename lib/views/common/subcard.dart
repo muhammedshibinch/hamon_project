@@ -27,11 +27,11 @@ class SubCard extends StatelessWidget {
         height: height * .12,
         width: width,
         padding:
-            const EdgeInsets.only(bottom: 12, top: 12, left: 38, right: 35),
+            const EdgeInsets.only(bottom: 12, top: 12, left: 12, right: 12),
         margin: const EdgeInsets.all(8),
         decoration: cardDecoration(),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(title, style: cardTitleStyle),
           ],
@@ -47,8 +47,8 @@ class SubCard extends StatelessWidget {
       boxShadow: [
         BoxShadow(
           color: Colors.grey.withOpacity(0.5),
-          spreadRadius: 5,
-          blurRadius: 7,
+          spreadRadius: 2,
+          blurRadius: 3,
           offset: const Offset(0, 3),
         ),
       ],

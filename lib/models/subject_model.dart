@@ -17,11 +17,4 @@ class Subject {
         name: json["name"],
         teacher: json["teacher"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "credits": credits,
-        "id": id,
-        "name": name,
-        "teacher": teacher,
-      };
 }

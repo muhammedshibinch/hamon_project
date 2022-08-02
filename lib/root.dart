@@ -22,12 +22,15 @@ class MyApp extends StatelessWidget {
         title: 'Hamon Project',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-            primarySwatch: Colors.blue,
-            appBarTheme: AppBarTheme(
-                centerTitle: true,
-                titleTextStyle: appBarStyle,
-                backgroundColor: appBarColor),
-            iconTheme: const IconThemeData(color: white)),
+          primarySwatch: Colors.blue,
+          appBarTheme: AppBarTheme(
+              centerTitle: true,
+              titleTextStyle: appBarStyle,
+              backgroundColor: appBarColor),
+          iconTheme: const IconThemeData(color: white),
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+              backgroundColor: primaryColor),
+        ),
         home: const HomePage(),
         onGenerateRoute: Routers.generateRoute,
       ),

@@ -5,9 +5,10 @@ import 'package:http/http.dart' as http;
 import '../models/student_model.dart';
 
 class StudentProvider with ChangeNotifier {
+  List<Student> students = [];
   Future<List<Student>> getStudents() async {
     final url = Uri.parse(studentUrl);
-    List<Student> students = [];
+    students = [];
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var body = json.decode(response.body);

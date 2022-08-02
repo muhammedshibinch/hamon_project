@@ -8,10 +8,11 @@ class SubjectDetailsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Dialog(
+      insetPadding: EdgeInsets.symmetric(vertical: height * .4, horizontal: 15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: SizedBox(
-        height: 200,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(

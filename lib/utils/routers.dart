@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hamon_project/models/classroom_model.dart';
+import 'package:hamon_project/views/classroom/classroom_details_page.dart';
 import 'package:hamon_project/views/classroom/classroom_page.dart';
 import 'package:hamon_project/views/home/homepage.dart';
 import 'package:hamon_project/views/student/student_page.dart';
@@ -15,6 +17,10 @@ class Routers {
         return MaterialPageRoute(builder: (_) => const SubjectPage());
       case roomRoute:
         return MaterialPageRoute(builder: (_) => const RoomPage());
+      case roomDetailRoute:
+        Room model = settings.arguments as Room;
+        return MaterialPageRoute(
+            builder: (_) => RoomDetailPage(roomModel: model));
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(
@@ -29,3 +35,4 @@ const String homeRoute = '/';
 const String studentRoute = '/student';
 const String subjectRoute = '/subject';
 const String roomRoute = '/room';
+const String roomDetailRoute = '/roomDetail';

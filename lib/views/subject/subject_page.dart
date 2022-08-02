@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hamon_project/controllers/subject_provider.dart';
 import 'package:hamon_project/models/subject_model.dart';
+import 'package:hamon_project/utils/utils.dart';
 import 'package:provider/provider.dart';
 import '../common/subcard.dart';
 import 'widgets/subjectdetails_dialog.dart';
@@ -23,9 +24,7 @@ class SubjectPage extends StatelessWidget {
             future: subjects,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const Center(child: progressIndicator);
               } else {
                 return ListView.builder(
                   itemCount: snapshot.data!.length,

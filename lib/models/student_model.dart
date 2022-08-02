@@ -17,11 +17,4 @@ class Student {
         id: json["id"],
         name: json["name"],
       );
-
-  Map<String, dynamic> toJson() => {
-        "age": age,
-        "email": email,
-        "id": id,
-        "name": name,
-      };
 }

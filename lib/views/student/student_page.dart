@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hamon_project/models/student_model.dart';
+import 'package:hamon_project/utils/utils.dart';
 import 'package:hamon_project/views/common/subcard.dart';
 import 'package:provider/provider.dart';
 
@@ -26,9 +27,7 @@ class StudentPage extends StatelessWidget {
             future: students,
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
+                return const Center(child: progressIndicator);
               } else {
                 return ListView.builder(
                   itemCount: snapshot.data!.length,

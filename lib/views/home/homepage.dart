@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hamon_project/utils/colors.dart';
 import 'package:hamon_project/utils/routers.dart';
 import 'package:provider/provider.dart';
 import '../../controllers/student_provider.dart';
@@ -37,6 +38,8 @@ class _HomePageState extends State<HomePage> {
                 height: height,
                 width: width,
                 title: "Students",
+                iconCardColor: subColor3,
+                subIcon: Icons.person,
                 onTap: () {
                   Navigator.pushNamed(context, studentRoute);
                 }),
@@ -44,6 +47,8 @@ class _HomePageState extends State<HomePage> {
                 height: height,
                 width: width,
                 title: "Subjects",
+                iconCardColor: subColor1,
+                subIcon: Icons.library_books_rounded,
                 onTap: () {
                   Navigator.pushNamed(context, subjectRoute);
                 }),
@@ -51,6 +56,8 @@ class _HomePageState extends State<HomePage> {
                 height: height,
                 width: width,
                 title: "Class Rooms",
+                iconCardColor: subColor2,
+                subIcon: Icons.class_rounded,
                 onTap: () {
                   Navigator.pushNamed(context, roomRoute);
                 }),

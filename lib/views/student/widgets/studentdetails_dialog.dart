@@ -8,12 +8,13 @@ class StudentDetailsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
     return Dialog(
+      insetPadding: EdgeInsets.symmetric(vertical: height * .4, horizontal: 15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: SizedBox(
-        height: 200,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -43,10 +44,12 @@ class Field extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text("$head   : ", style: secondaryTextStyle),
-        Text(
-          result,
-          style: secondaryTextStyle,
-          overflow: TextOverflow.ellipsis,
+        Expanded(
+          child: Text(
+            result,
+            style: secondaryTextStyle,
+            overflow: TextOverflow.ellipsis,
+          ),
         )
       ],
     );

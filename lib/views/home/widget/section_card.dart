@@ -10,28 +10,49 @@ class SectionCard extends StatelessWidget {
     required this.width,
     required this.title,
     required this.onTap,
+    required this.iconCardColor,
+    required this.subIcon,
   }) : super(key: key);
 
   final double height;
   final double width;
   final String title;
   final void Function()? onTap;
+  final Color iconCardColor;
+  final IconData subIcon;
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: onTap,
       child: Container(
         height: height * .14,
         width: width,
         padding:
-            const EdgeInsets.only(bottom: 12, top: 12, left: 38, right: 35),
-        margin: const EdgeInsets.all(8),
+            const EdgeInsets.only(bottom: 12, top: 12, left: 12, right: 35),
+        margin: const EdgeInsets.all(10),
         decoration: cardDecoration(),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(title, style: cardTitleStyle),
+            Container(
+              height: height * .11,
+              width: width * .22,
+              margin: const EdgeInsets.only(right: 15),
+              decoration: iconCardDecoration(iconCardColor.withOpacity(.26)),
+              child: Icon(
+                subIcon,
+                size: width * .1,
+                color: iconCardColor,
+              ),
+            ),
+            Expanded(
+              child: Text(
+                title,
+                style: cardTitleStyle,
+              ),
+            ),
             arrowIcon(),
           ],
         ),
@@ -54,10 +75,17 @@ class SectionCard extends StatelessWidget {
     );
   }
 
+  BoxDecoration iconCardDecoration(Color color) {
+    return BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(20),
+    );
+  }
+
   Container arrowIcon() {
     return Container(
-      height: height * .075,
-      width: height * .075,
+      height: height * .065,
+      width: height * .065,
       decoration: const BoxDecoration(
         color: primaryColor,
         shape: BoxShape.circle,
